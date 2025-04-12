@@ -1,0 +1,13 @@
+services:
+  baby1:
+    build: .
+    image: baby1
+    restart: unless-stopped
+    environment:
+      - TERM=xterm
+    ulimits:
+      nproc: 65535
+      core: 0
+    ports:
+      - "11101:11101"
+

@@ -1,0 +1,5 @@
+services:
+  web-levi:
+    build: .
+    ports:
+      - "8001:80"

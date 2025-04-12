@@ -1,0 +1,22 @@
+main:
+        push    rbp
+        mov     rbp, rsp
+        mov     DWORD PTR [rbp-4], 7331
+        mov     DWORD PTR [rbp-8], 1337
+        mov     DWORD PTR [rbp-12], 1892
+        mov     eax, DWORD PTR [rbp-8]
+        imul    eax, DWORD PTR [rbp-12]
+        mov     edx, eax
+        mov     eax, DWORD PTR [rbp-4]
+        add     eax, edx
+        mov     DWORD PTR [rbp-16], eax
+        mov     eax, DWORD PTR [rbp-16]
+        sub     eax, DWORD PTR [rbp-12]
+        mov     DWORD PTR [rbp-20], eax
+        mov     eax, DWORD PTR [rbp-20]
+        imul    eax, DWORD PTR [rbp-16]
+        sub     eax, DWORD PTR [rbp-4]
+        mov     DWORD PTR [rbp-20], eax
+        mov     eax, 0
+        pop     rbp
+        ret
