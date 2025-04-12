@@ -1,0 +1,35 @@
+name: "Mamba Nightmare"
+category: Digital Forensic
+description: |-
+  My DFIR analyst acquaintance just gave me a malware stealer-type that does something. He says that one of its capability is to screenshot all the screens connected in the monitor, even from the HDMI, USB-C, and stuff.
+  Can you help me to clarify what's the prefix filename saved in the disk when the screenshot is successfully taken?
+  
+  **WARNING: DO NOT RUN THE SCRIPT IN YOUR HOST ENVIRONMENT**
+
+  Unzip the file with password = infected
+
+  Flag format = `LKSJ{prefixfilename}`
+
+  Example, if the screenshotted filename is called "Tungtung saba.jfif", then the answer is LKSJ{Tungtung}.
+  
+  Author: aseng
+
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 5
+    minimum: 100
+
+flags:
+  - LKSJ{Display}
+
+tags:
+  - medium
+
+files:
+ - dist/challenge_malware.zip
+
+state: hidden
+
+version: "0.1"
